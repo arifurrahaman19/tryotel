@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$poppins: "Poppins", sans-serif;
+
+.infinite-scroll-component {
+  overflow: inherit !important;
+}
+
+.homeWrapper {
+  max-width: 552px;
+  margin: 0 auto;
+}
+
+.container {
+  width: auto;
+  padding: 0 15px 50px;
+
+  p {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+.grid-container {
+  display: grid;
+}
+
+.nevigation-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px 15px;
+  box-shadow: 3px -3px 9px 2px rgb(0 0 0 / 49%);
+  margin-bottom: 30px;
+
+  .back-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      display: block;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+
+    h4 {
+      font-family: $poppins;
+      font-size: 15pt;
+      font-weight: 700;
+      color: #00276c;
+    }
+  }
+
+  .loyality-points {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+
+    img {
+      display: block;
+    }
+
+    h4 {
+      font-family: $poppins;
+      font-size: 15pt;
+      font-weight: 700;
+      color: #00276c;
+    }
+  }
+}
+
+.holidays {
+  margin-bottom: 20px;
+
+  h2 {
+    font-family: $poppins;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #00276c;
+  }
+}
+
+.package {
+  border-radius: 5pt;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.49);
+  overflow: hidden;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .best-value {
+    // padding: 12px 29px;
+    padding: 12px 20px;
+    background-color: #ffc610;
+    border-radius: 0pt 0pt 5pt 0pt;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+    p {
+      font-family: $poppins;
+      font-weight: 600;
+      font-size: 11pt;
+      color: #00276c;
+    }
+
+    img {
+      display: block;
+      margin-right: 4px;
+    }
+  }
+
+  &__desc {
+    grid-template-columns: 1fr 1.2fr;
+    grid-column-gap: 15px;
+    height: fit-content;
+
+    &--image {
+      overflow: hidden;
+
+      img {
+        height: 180px;
+        display: block;
+      }
+
+      .no-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0 15px 15px;
+        height: 180px;
+        box-sizing: border-box;
+
+        h5 {
+          font-family: $poppins;
+          font-size: 15pt;
+          font-weight: 700;
+          color: rgba(34, 34, 34, 0.363);
+          line-height: 1.3;
+          text-align: center;
+          margin-top: 26px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &--contents {
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px;
+      padding-right: 15px;
+
+      h2 {
+        font-family: $poppins;
+        font-size: 15pt;
+        font-weight: 700;
+        color: #00276c;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+      p {
+        font-family: $poppins;
+        font-weight: 300;
+        font-size: 8pt;
+        color: #222222;
+        text-align: left;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      .features {
+        padding-bottom: 8px;
+        margin-top: auto;
+
+        .duration,
+        .loyality-points {
+          grid-template-columns: 0.5fr 4fr;
+          grid-column-gap: 8px;
+
+          h4 {
+            font-family: $poppins;
+            font-weight: 500;
+            font-size: 8pt;
+            color: #00276c;
+          }
+        }
+
+        .loyality-points {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+
+  &__includes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    background-color: #00276c;
+    padding: 8px 15px 15px;
+
+    .price-start {
+      margin-left: auto;
+      p {
+        font-family: $poppins;
+        font-weight: 400;
+        font-size: 9pt;
+        color: #fff;
+        margin-bottom: 6px;
+        text-align: right;
+      }
+
+      h3 {
+        font-family: $poppins;
+        font-weight: 700;
+        font-size: 18pt;
+        color: #fff;
+      }
+    }
+
+    .include-features {
+      p {
+        font-family: $poppins;
+        font-weight: 400;
+        font-size: 9pt;
+        color: #ffc610;
+        margin-bottom: 10px;
+      }
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      img {
+        display: block;
+        width: 12.2pt;
+        height: 11.8pt;
+
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

@@ -43,7 +43,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    loginFunc();
+    const token = sessionStorage.getItem("TOKEN");
+    if (!token) {
+      loginFunc();
+    }
   }, []);
 
   return (
@@ -52,29 +55,31 @@ export default function Home() {
         <title>FLIGHT LOCAL | Tryotel Travels</title>
       </Head>
 
-      {getPackages?.loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="homeWrapper">
-          <NavigationHeader />
+      <div className="homeWrapper">
+        <NavigationHeader />
 
-          <div className="container">
-            <div className="holidays">
-              <h2>{packagesData?.count} Available Holidays</h2>
-            </div>
+        <div className="container">
+          {getPackages?.loading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              <div className="holidays">
+                <h2>{packagesData?.count} Available Holidays</h2>
+              </div>
 
-            <InfiniteScroll
-              dataLength={packagesData?.count}
-              next={fetchMoreData}
-              hasMore={true}
-            >
-              {packagesData?.packages.map((pack) => {
-                return <PackageCard pack={pack} key={pack?.uid} />;
-              })}
-            </InfiniteScroll>
-          </div>
+              <InfiniteScroll
+                dataLength={packagesData?.count}
+                next={fetchMoreData}
+                hasMore={true}
+              >
+                {packagesData?.packages.map((pack) => {
+                  return <PackageCard pack={pack} key={pack?.uid} />;
+                })}
+              </InfiniteScroll>
+            </>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 }
